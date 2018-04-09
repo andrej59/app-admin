@@ -18,14 +18,6 @@ public interface UserService {
   List<User> getAllUsers();
 
   /**
-   * Возвращает пользователя приложения по его имени.
-   *
-   * @param userName имя пользователя приложения
-   * @return пользователь приложения
-   */
-  User getUserByName(String userName);
-
-  /**
    * Возвращает пользователя приложения по идентификатору.
    *
    * @param id идентификатор пользователя
@@ -46,6 +38,14 @@ public interface UserService {
    * @param id идентификатор пользователя
    */
   void deleteUserById(Long id);
+
+  /**
+   * Возвращает пользователя приложения по его имени.
+   *
+   * @param userName имя пользователя приложения
+   * @return пользователь приложения
+   */
+  User getUserByName(String userName);
 
   /**
    * Выполняет изменение пароля пользователя.

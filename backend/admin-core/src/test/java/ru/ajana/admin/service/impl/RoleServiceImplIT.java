@@ -33,6 +33,7 @@ public class RoleServiceImplIT extends AbstractIntegrationTest {
   public void testGetRolesByUserId() {
     List<Role> roles = roleService.getRolesByUserId(null);
     assertNull(roles);
+
     roles = roleService.getRolesByUserId(-1L);
     assertNull(roles);
 
