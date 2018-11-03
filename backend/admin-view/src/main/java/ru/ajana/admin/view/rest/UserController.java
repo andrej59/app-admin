@@ -1,4 +1,4 @@
-package ru.ajana.admin.rest;
+package ru.ajana.admin.view.rest;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import ru.ajana.admin.api.service.UserService;
 import ru.ajana.admin.model.User;
 
@@ -19,8 +18,7 @@ import ru.ajana.admin.model.User;
  *
  * @author Andrey Kharintsev on 19.03.2018
  */
-@RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController implements UserService {
 
   private final UserService userService;

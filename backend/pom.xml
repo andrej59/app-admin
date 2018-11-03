@@ -15,10 +15,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <spring.version>5.0.4.RELEASE</spring.version>
-    <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
-    <spring-data-jpa.version>2.0.3.RELEASE</spring-data-jpa.version>
+    <spring.version>5.0.7.RELEASE</spring.version>
+    <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+    <spring-data-jpa.version>2.0.8.RELEASE</spring-data-jpa.version>
+    <spring-data-rest>3.0.8.RELEASE</spring-data-rest>
 
+    <jackson.version>2.9.5</jackson.version>
     <dozer.version>5.5.1</dozer.version>
     <eclipselink.version>2.7.1</eclipselink.version>
     <h2.version>1.4.196</h2.version>
@@ -96,6 +98,12 @@
 
       <dependency>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-rest</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-logging</artifactId>
         <version>${spring-boot.version}</version>
       </dependency>
@@ -139,6 +147,32 @@
       </dependency>
 
       <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- SPRING DATA REST -->
+
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-rest-webmvc</artifactId>
+        <version>${spring-data-rest}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-rest-hal-browser</artifactId>
+        <version>${spring-data-rest}</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.springframework.data</groupId>
         <artifactId>spring-data-jpa</artifactId>
         <version>${spring-data-jpa.version}</version>
@@ -154,6 +188,26 @@
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-crypto</artifactId>
         <version>5.0.2.RELEASE</version>
+      </dependency>
+
+      <!-- JACKSON -->
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson.version}</version>
       </dependency>
 
       <!-- VALIDATION API -->
