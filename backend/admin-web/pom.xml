@@ -11,7 +11,7 @@
   </parent>
 
   <groupId>ru.ajana.admin</groupId>
-  <artifactId>admin-view</artifactId>
+  <artifactId>admin-web</artifactId>
   <packaging>war</packaging>
 
   <dependencies>

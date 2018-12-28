@@ -45,8 +45,8 @@
     <module>admin-core</module>
     <module>admin-jpa</module>
     <module>admin-model</module>
-    <module>admin-view</module>
-    <module>admin-test</module>
+    <module>admin-web</module>
+    <module>admin-tests</module>
   </modules>
 
   <dependencyManagement>
