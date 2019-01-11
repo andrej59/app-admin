@@ -1,0 +1,29 @@
+
+dependencies {
+    compile project(":admin-jpa")
+    compile project(":admin-model")
+    compile project(":admin-api")
+    compile 'org.springframework:spring-beans'
+    compile 'org.springframework:spring-core'
+    compile 'org.springframework:spring-context'
+    compile 'org.springframework:spring-context-support'
+    compile 'org.springframework.data:spring-data-jpa'
+    compile 'org.springframework.data:spring-data-commons'
+    compile 'org.springframework.security:spring-security-crypto'
+    compile 'javax.inject:javax.inject'
+    compile 'org.eclipse.persistence:javax.persistence'
+    compile 'org.eclipse.persistence:eclipselink'
+    compile 'javax.validation:validation-api'
+    compile 'org.hibernate:hibernate-validator'
+    compile 'org.slf4j:slf4j-api'
+    compile 'org.slf4j:jcl-over-slf4j'
+    compile 'ch.qos.logback:logback-core'
+    compile 'ch.qos.logback:logback-classic'
+    runtime 'com.h2database:h2'
+    testCompile 'junit:junit'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'com.namics.oss:java-random'
+    testCompile 'org.springframework:spring-test'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.springframework.boot:spring-boot-test-autoconfigure'
+}

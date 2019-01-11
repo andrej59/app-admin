@@ -9,8 +9,6 @@ import ru.ajana.admin.model.Role;
  * @author Andrey Kharintsev by 10.03.2018
  */
 public class RoleMapper implements Mapper<RoleEntity, Role> {
-
-
   @Override
   public Role mapTo(RoleEntity entity) {
     Role role = new Role();

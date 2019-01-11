@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.ajana.admin.mapper.RoleMapperTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-01-11T18:11:21" hostname="andrej59" time="0.842">
+  <properties/>
+  <testcase name="mapTo" classname="ru.ajana.admin.mapper.RoleMapperTest" time="0.835"/>
+  <testcase name="mapFrom" classname="ru.ajana.admin.mapper.RoleMapperTest" time="0.006"/>
+  <system-out><![CDATA[23:11:21.449 [INFO] Test worker org.reflections.Reflections:scan:229 - Reflections took 50 ms to scan 1 urls, producing 3 keys and 36 values 
+23:11:21.479 [WARN] Test worker com.namics.commons.random.generator.RandomGeneratorFactory:addRandomGenerator:70 - Could not add generator class com.namics.commons.random.generator.basic.DateTimeGenerator java.lang.NoClassDefFoundError: org/joda/time/ReadablePeriod
+23:11:21.479 [WARN] Test worker com.namics.commons.random.generator.RandomGeneratorFactory:addRandomGenerator:70 - Could not add generator class com.namics.commons.random.generator.basic.JodaPeriodGenerator java.lang.NoClassDefFoundError: org/joda/time/Period
+23:11:21.489 [INFO] Test worker org.reflections.Reflections:scan:229 - Reflections took 10 ms to scan 1 urls, producing 4 keys and 20 values 
+23:11:21.499 [INFO] Test worker com.namics.commons.random.RandomData:populateBean:503 - Property SimplePropertyDescriptor[name=id, propertyType=class java.lang.Long, readMethod=public java.lang.Long ru.ajana.admin.jpa.entities.RoleEntity.getId(), writeMethod=public void ru.ajana.admin.jpa.entities.RoleEntity.setId(java.lang.Long)] 
+23:11:21.509 [INFO] Test worker com.namics.commons.random.RandomData:populateBean:503 - Property SimplePropertyDescriptor[name=ident, propertyType=class java.lang.String, readMethod=public java.lang.String ru.ajana.admin.jpa.entities.RoleEntity.getIdent(), writeMethod=public void ru.ajana.admin.jpa.entities.RoleEntity.setIdent(java.lang.String)] 
+23:11:21.739 [INFO] Test worker com.namics.commons.random.RandomData:populateBean:503 - Property SimplePropertyDescriptor[name=name, propertyType=class java.lang.String, readMethod=public java.lang.String ru.ajana.admin.jpa.entities.RoleEntity.getName(), writeMethod=public void ru.ajana.admin.jpa.entities.RoleEntity.setName(java.lang.String)] 
+23:11:21.989 [INFO] Test worker org.reflections.Reflections:scan:229 - Reflections took 0 ms to scan 1 urls, producing 1 keys and 2 values 
+23:11:21.989 [INFO] Test worker com.namics.commons.random.RandomData:populateBean:503 - Property SimplePropertyDescriptor[name=id, propertyType=class java.lang.Long, readMethod=public java.lang.Long ru.ajana.admin.model.Role.getId(), writeMethod=public void ru.ajana.admin.model.Role.setId(java.lang.Long)] 
+23:11:21.989 [INFO] Test worker com.namics.commons.random.RandomData:populateBean:503 - Property SimplePropertyDescriptor[name=ident, propertyType=class java.lang.String, readMethod=public java.lang.String ru.ajana.admin.model.Role.getIdent(), writeMethod=public void ru.ajana.admin.model.Role.setIdent(java.lang.String)] 
+23:11:21.989 [INFO] Test worker com.namics.commons.random.RandomData:populateBean:503 - Property SimplePropertyDescriptor[name=name, propertyType=class java.lang.String, readMethod=public java.lang.String ru.ajana.admin.model.Role.getName(), writeMethod=public void ru.ajana.admin.model.Role.setName(java.lang.String)] 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

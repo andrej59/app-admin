@@ -1,0 +1,29 @@
+dependencies {
+    compile project(':admin-api')
+    compile project(':admin-model')
+    compile project(':admin-core')
+    compile 'org.springframework:spring-beans'
+    compile 'org.springframework:spring-context'
+    compile 'org.springframework:spring-core'
+    compile 'org.springframework:spring-web'
+    compile 'org.springframework:spring-webmvc'
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-logging'
+    compile 'com.fasterxml.jackson.core:jackson-core'
+    compile 'com.fasterxml.jackson.core:jackson-databind'
+    compile 'com.fasterxml.jackson.core:jackson-annotations'
+    compile 'org.eclipse.persistence:javax.persistence'
+    compile 'org.eclipse.persistence:eclipselink'
+    compile 'org.slf4j:slf4j-api'
+    compile 'org.slf4j:jcl-over-slf4j'
+    compile 'ch.qos.logback:logback-core'
+    compile 'ch.qos.logback:logback-classic'
+    runtime 'com.h2database:h2'
+    testCompile 'junit:junit'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'org.springframework:spring-test'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.springframework.boot:spring-boot-test-autoconfigure'
+    testCompile 'com.namics.oss:java-random'
+}
