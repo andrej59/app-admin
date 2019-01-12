@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import ru.ajana.admin.core.util.PasswordUtils;
 
 /**
  * Тест утилиты вспомогательных методов для работы с паролем.

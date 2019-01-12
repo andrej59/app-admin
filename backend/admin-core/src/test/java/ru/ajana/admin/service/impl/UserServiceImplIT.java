@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.ajana.admin.AbstractIntegrationTest;
 import ru.ajana.admin.api.service.UserService;
 import ru.ajana.admin.model.User;
-import ru.ajana.admin.util.PasswordUtils;
+import ru.ajana.admin.core.util.PasswordUtils;
 
 /**
  * Интеграционный тест сервиса пользователей.

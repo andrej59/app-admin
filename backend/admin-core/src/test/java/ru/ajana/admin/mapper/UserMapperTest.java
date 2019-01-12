@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import ru.ajana.admin.AbstractTest;
+import ru.ajana.admin.core.mapper.Mapper;
+import ru.ajana.admin.core.mapper.UserMapper;
 import ru.ajana.admin.jpa.entities.UserEntity;
 import ru.ajana.admin.model.User;
 

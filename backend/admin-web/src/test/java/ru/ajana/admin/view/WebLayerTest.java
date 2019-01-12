@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.ajana.admin.view.rest.UserController;
+import ru.ajana.admin.rest.controller.UserController;
 
 /**
  * @author Andrey Kharintsev on 10.04.2018

@@ -10,7 +10,7 @@
 
  
 ```sh
-mvn clean install
+gradle clean assemble
 ```
 
 ## Конфигурация

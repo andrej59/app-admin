@@ -14,6 +14,23 @@ plugins {
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
 }
 
+ext {
+    springVersion = '5.1.3.RELEASE'
+    springSecurityVersion = '5.1.3.RELEASE'
+    springBootVersion = '2.1.1.RELEASE'
+    swagger2Version = '2.9.2'
+    flywayVersion = '5.1.4'
+    jettyVersion = '9.4.12.v20180830'
+    jacksonVersion = '2.9.8'
+    eclipselinkVersion = '2.7.1'
+    lombokVersion = '1.16.16'
+    h2Version = '1.4.196'
+    slf4jVersion = '1.7.25'
+    logbackVersion = '1.2.3'
+}
+
+
+
 allprojects {
     group = 'ru.ajana.admin'
     version = '1.0-SNAPSHOT'
@@ -28,29 +45,61 @@ allprojects {
     apply plugin: "eclipse"
     apply plugin: 'io.spring.dependency-management'
 
-    dependencyManagement {         
+
+    configurations {
+        compile.exclude group: 'org.apache.tomcat'
+        compile.exclude module: 'tomcat-embed-el'
+        compile.exclude module: 'spring-boot-starter-tomcat'
+    }
+
+    dependencyManagement {
         imports {
-            mavenBom 'org.springframework:spring-framework-bom:5.1.3.RELEASE'
-            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.1.RELEASE'
-            mavenBom 'org.springframework.security:spring-security-bom:5.1.3.RELEASE'
+            mavenBom 'org.springframework:spring-framework-bom:' + springVersion
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:' + springBootVersion
+            mavenBom 'org.springframework.security:spring-security-bom:' + springSecurityVersion
             mavenBom 'org.springframework.data:spring-data-releasetrain:Lovelace-SR3'
-            mavenBom 'com.fasterxml.jackson:jackson-bom:2.9.8'
+            mavenBom 'com.fasterxml.jackson:jackson-bom:' + jacksonVersion
         }
 
         dependencies {
-            dependency 'javax.inject:javax.inject:1'
+            // Eclipse
+            dependency 'org.eclipse:yasson:1.0'
             dependency 'org.eclipse.persistence:javax.persistence:2.1.1'
-            dependency 'javax.validation:validation-api:2.0.1.Final'
+            dependency 'org.eclipse.persistence:eclipselink:' + eclipselinkVersion
+            dependency 'org.eclipse.jetty:jetty-server:' + jettyVersion
+            dependency 'org.eclipse.jetty:jetty-util:' + jettyVersion
+
+            // Flyway
+            dependency 'org.flywaydb:flyway-core:' + flywayVersion
+
+            // Swagger2
+            dependency 'io.springfox:springfox-swagger2:' + swagger2Version
+            dependency 'io.springfox:springfox-swagger-ui:' + swagger2Version
+
+            // Common
+            dependency 'org.postgresql:postgresql:42.2.5'
+            dependency 'org.apache.commons:commons-lang3:3.6'
+            dependency 'org.glassfish:javax.json:1.1'
+            dependency 'javax.json.bind:javax.json.bind-api:1.0'
+            dependency 'com.github.dozermapper:dozer-core:6.4.1'
+            dependency 'org.projectlombok:lombok:' + lombokVersion
             dependency 'org.hibernate:hibernate-validator:6.0.7.Final'
-            dependency 'org.eclipse.persistence:eclipselink:2.7.1'
-            dependency 'org.slf4j:slf4j-api:1.7.25'
-            dependency 'org.slf4j:jcl-over-slf4j:1.7.25'
-            dependency 'ch.qos.logback:logback-core:1.2.3'
-            dependency 'ch.qos.logback:logback-classic:1.2.3'
-            dependency 'com.h2database:h2:1.4.196'
-            dependency 'org.mockito:mockito-core:2.15.0'
+            dependency 'javax.validation:validation-api:2.0.1.Final'
+            dependency 'javax.inject:javax.inject:1'
             dependency 'com.namics.oss:java-random:1.1.4'
+            dependency 'com.h2database:h2:' + h2Version
+
+            // Logging
+            dependency 'org.slf4j:slf4j-api:' + slf4jVersion
+            dependency 'org.slf4j:jcl-over-slf4j:' + slf4jVersion
+            dependency 'ch.qos.logback:logback-core:' + logbackVersion
+            dependency 'ch.qos.logback:logback-classic:' + logbackVersion
+
+            // Testing
             dependency 'junit:junit:4.12'
+            dependency 'org.mockito:mockito-core:2.15.0'
+            dependency 'com.opentable.components:otj-pg-embedded:0.12.11'
+
         }
     }
 
@@ -61,10 +110,12 @@ allprojects {
     }
 }
 
+
+
 subprojects {
     apply plugin: 'java'
     apply plugin: "idea"
-    apply plugin: "eclipse"
+    apply plugin: 'eclipse'
 
     tasks.withType(JavaCompile) {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -78,5 +129,4 @@ subprojects {
             html.enabled = true
         }
     }
-
 }

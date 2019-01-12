@@ -1,7 +1,7 @@
 package ru.ajana.admin;
 
 import com.namics.commons.random.RandomData;
-import ru.ajana.admin.mapper.MapperFactory;
+import ru.ajana.admin.core.mapper.MapperFactory;
 
 /**
  * Абстрактный тест.
