@@ -53,13 +53,18 @@ dependencies {
     compile 'javax.json.bind:javax.json.bind-api'
     compile 'com.github.dozermapper:dozer-core'
     compileOnly 'org.projectlombok:lombok'
-    runtime 'com.h2database:h2'
+
 
     // Logging
     compile 'org.slf4j:slf4j-api'
     compile 'org.slf4j:jcl-over-slf4j'
     compile 'ch.qos.logback:logback-core'
     compile 'ch.qos.logback:logback-classic'
+
+    // Database
+    compile 'org.postgresql:postgresql:42.2.5'
+    runtime 'com.opentable.components:otj-pg-embedded:0.12.11'
+    //runtime 'com.h2database:h2'
 
     // Testing
     testCompile 'junit:junit'
@@ -68,5 +73,4 @@ dependencies {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.boot:spring-boot-test-autoconfigure'
     testCompile 'com.namics.oss:java-random'
-    testCompile 'com.opentable.components:otj-pg-embedded'
 }

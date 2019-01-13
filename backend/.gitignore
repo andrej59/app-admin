@@ -1,3 +1,14 @@
+#Custom
+
+/.idea
+*.iml
+datasource.properties
+datasource.yaml
+
+.classpath
+.project
+RemoteSystemsTempFiles
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Gradle template
 .gradle
@@ -341,11 +352,3 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-#Custom
-
-/.idea
-*.iml
-
-.classpath
-.project
-RemoteSystemsTempFiles

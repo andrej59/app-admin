@@ -34,7 +34,7 @@ public class WebConfig implements WebMvcConfigurer {
   /**
    * Файл с настройкаси подключения к базе данных.
    */
-  private static final String DATASOURCE_PROPERTIES = "datasource.properties";
+  //private static final String DATASOURCE_PROPERTIES = "datasource.properties";
   private static PropertySourcesPlaceholderConfigurer configurer;
 
   @Override
@@ -62,19 +62,19 @@ public class WebConfig implements WebMvcConfigurer {
     return new AppContextProvider(context);
   }
   */
-  @Bean
-  public static PropertySourcesPlaceholderConfigurer propertyConfigurer()
-      throws IOException {
-
-    configurer = new PropertySourcesPlaceholderConfigurer();
-    configurer.setFileEncoding("UTF-8");
-    configurer.setLocalOverride(true);
-    configurer.setIgnoreResourceNotFound(true);
-    // application.properties включается по умолчанию
-    Resource datasourceConfig = new ClassPathResource(DATASOURCE_PROPERTIES);
-    configurer.setLocations(datasourceConfig);
-    return configurer;
-  }
+//  @Bean
+//  public static PropertySourcesPlaceholderConfigurer propertyConfigurer()
+//      throws IOException {
+//
+//    configurer = new PropertySourcesPlaceholderConfigurer();
+//    configurer.setFileEncoding("UTF-8");
+//    configurer.setLocalOverride(true);
+//    configurer.setIgnoreResourceNotFound(true);
+//    // application.properties включается по умолчанию
+//    Resource datasourceConfig = new ClassPathResource(DATASOURCE_PROPERTIES);
+//    configurer.setLocations(datasourceConfig);
+//    return configurer;
+//  }
 
 
   @Override

@@ -77,7 +77,6 @@ allprojects {
             dependency 'io.springfox:springfox-swagger-ui:' + swagger2Version
 
             // Common
-            dependency 'org.postgresql:postgresql:42.2.5'
             dependency 'org.apache.commons:commons-lang3:3.6'
             dependency 'org.glassfish:javax.json:1.1'
             dependency 'javax.json.bind:javax.json.bind-api:1.0'
@@ -87,7 +86,7 @@ allprojects {
             dependency 'javax.validation:validation-api:2.0.1.Final'
             dependency 'javax.inject:javax.inject:1'
             dependency 'com.namics.oss:java-random:1.1.4'
-            dependency 'com.h2database:h2:' + h2Version
+
 
             // Logging
             dependency 'org.slf4j:slf4j-api:' + slf4jVersion
@@ -95,11 +94,14 @@ allprojects {
             dependency 'ch.qos.logback:logback-core:' + logbackVersion
             dependency 'ch.qos.logback:logback-classic:' + logbackVersion
 
+            // Database
+            dependency 'org.postgresql:postgresql:42.2.5'
+            dependency 'com.opentable.components:otj-pg-embedded:0.12.11'
+            dependency 'com.h2database:h2:' + h2Version
+
             // Testing
             dependency 'junit:junit:4.12'
             dependency 'org.mockito:mockito-core:2.15.0'
-            dependency 'com.opentable.components:otj-pg-embedded:0.12.11'
-
         }
     }
 
