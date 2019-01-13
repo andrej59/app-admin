@@ -19,7 +19,7 @@ ext {
     springSecurityVersion = '5.1.3.RELEASE'
     springBootVersion = '2.1.1.RELEASE'
     swagger2Version = '2.9.2'
-    flywayVersion = '5.1.4'
+    flywayVersion = '5.2.4'
     jettyVersion = '9.4.12.v20180830'
     jacksonVersion = '2.9.8'
     eclipselinkVersion = '2.7.1'

@@ -21,7 +21,7 @@ import org.springframework.transaction.jta.JtaTransactionManager;
  * @author Andrey Kharintsev on 12.01.2019
  */
 @Configuration
-@PropertySource(value = "datasource.properties", encoding = "UTF-8" )
+//@PropertySource(value = "datasource.properties", encoding = "UTF-8" )
 @EntityScan(basePackages = {"ru.ajana.admin.jpa.entities"})
 @EnableJpaRepositories(basePackages = {"ru.ajana.admin.repository"})
 public class PersistenceConfig extends JpaBaseConfiguration {
