@@ -1,17 +1,12 @@
 package ru.ajana.admin.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
-import javax.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -75,8 +70,6 @@ public class WebConfig implements WebMvcConfigurer {
 //    configurer.setLocations(datasourceConfig);
 //    return configurer;
 //  }
-
-
   @Override
   public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
     ObjectMapper objectMapper = new ObjectMapper();

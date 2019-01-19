@@ -62,8 +62,7 @@ dependencies {
     compile 'ch.qos.logback:logback-classic'
 
     // Database
-    compile 'org.postgresql:postgresql:42.2.5'
-    runtime 'com.opentable.components:otj-pg-embedded:0.12.11'
+    compile 'org.postgresql:postgresql'
     //runtime 'com.h2database:h2'
 
     // Testing
@@ -72,5 +71,7 @@ dependencies {
     testCompile 'org.springframework:spring-test'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.boot:spring-boot-test-autoconfigure'
+    testCompile 'com.opentable.components:otj-pg-embedded'
     testCompile 'com.namics.oss:java-random'
+    testCompile 'org.apache.httpcomponents:httpclient'
 }

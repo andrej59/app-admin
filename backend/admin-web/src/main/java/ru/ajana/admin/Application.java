@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySources;
  */
 @SpringBootApplication(scanBasePackages = {"ru.ajana.admin"})
 @PropertySources({
-    @PropertySource(value = "classpath:default.properties", encoding = "UTF-8"),
+    @PropertySource(value = "classpath:application-default.properties", encoding = "UTF-8"),
     @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = true, encoding = "UTF-8"),
     @PropertySource(value = "classpath:datasource.properties", ignoreResourceNotFound = true, encoding = "UTF-8")
 })

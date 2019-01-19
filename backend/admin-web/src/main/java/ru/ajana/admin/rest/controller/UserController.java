@@ -1,7 +1,11 @@
 package ru.ajana.admin.rest.controller;
 
-import java.util.List;
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+
+import io.swagger.annotations.Api;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ru.ajana.admin.api.service.UserService;
 import ru.ajana.admin.model.User;
 
@@ -18,8 +23,10 @@ import ru.ajana.admin.model.User;
  *
  * @author Andrey Kharintsev on 19.03.2018
  */
-@RequestMapping("/users")
-public class UserController implements UserService {
+@RestController
+@RequestMapping(path = "/v1/users", consumes = APPLICATION_JSON_UTF8_VALUE, produces = APPLICATION_JSON_UTF8_VALUE)
+@Api(value = "API Admin", description = "Service Admin Application")
+public class UserController {
 
   private final UserService userService;
 
@@ -29,40 +36,40 @@ public class UserController implements UserService {
   }
 
   @GetMapping
-  @Override
-  public List<User> getAllUsers() {
-    return userService.getAllUsers();
+  public ResponseEntity getAllUsers() {
+    return ResponseEntity.ok(userService.getAllUsers());
   }
 
-  @GetMapping(value = "/{id}")
-  @Override
-  public User getUser(@PathVariable Long id) {
-    return userService.getUser(id);
+  @GetMapping(path = "/{id}")
+  public ResponseEntity getUser(@PathVariable Long id) {
+    return ResponseEntity.of(Optional.of(userService.getUser(id)));
+  }
+
+  @GetMapping(path = "getUserByName/{userName}")
+  public ResponseEntity getUserByName(@PathVariable String userName) {
+    return ResponseEntity.of(Optional.of(userService.getUserByName(userName)));
   }
 
   @PostMapping
+  public ResponseEntity createUser(@RequestBody User user) {
+    return ResponseEntity.ok(userService.saveUser(user));
+  }
+
   @PutMapping
-  @Override
-  public User saveUser(@RequestBody User user) {
-    return userService.saveUser(user);
+  public ResponseEntity updateUser(@RequestBody User user) {
+    return ResponseEntity.of(Optional.of(userService.saveUser(user)));
   }
 
-  @DeleteMapping(value = "/{id}")
-  @Override
-  public void deleteUserById(@PathVariable Long id) {
+  @DeleteMapping(path = "/{id}")
+  public ResponseEntity deleteUserById(@PathVariable Long id) {
     userService.deleteUserById(id);
-  }
-
-  @GetMapping(path = "getUserByName", value = "/{userName}")
-  @Override
-  public User getUserByName(@PathVariable String userName) {
-    return userService.getUserByName(userName);
+    return ResponseEntity.noContent().build();
   }
 
   @PutMapping(path = "changePassword")
-  @Override
-  public boolean changePassword(@RequestParam String userName, @RequestParam String oldPassword,
+  public ResponseEntity changePassword(@RequestParam String userName,
+      @RequestParam String oldPassword,
       @RequestParam String newPassword) {
-    return userService.changePassword(userName, oldPassword, newPassword);
+    return ResponseEntity.ok(userService.changePassword(userName, oldPassword, newPassword));
   }
 }
