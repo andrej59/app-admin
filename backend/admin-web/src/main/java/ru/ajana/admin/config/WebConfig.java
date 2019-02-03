@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -23,14 +24,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-
   @Autowired
   private ApplicationContext context;
-  /**
-   * Файл с настройкаси подключения к базе данных.
-   */
-  //private static final String DATASOURCE_PROPERTIES = "datasource.properties";
-  private static PropertySourcesPlaceholderConfigurer configurer;
+
 
   @Override
   public void addViewControllers(final ViewControllerRegistry registry) {

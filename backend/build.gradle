@@ -115,7 +115,6 @@ allprojects {
 }
 
 
-
 subprojects {
     apply plugin: 'java'
     apply plugin: "idea"
@@ -128,6 +127,7 @@ subprojects {
     }
 
     test {
+        onlyIf { ! Boolean.getBoolean('skip.tests') }
         reports {
             junitXml.enabled = true
             html.enabled = true

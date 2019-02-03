@@ -1,6 +1,7 @@
 package ru.ajana.admin.migration;
 
 import org.flywaydb.core.Flyway;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.ajana.admin.AbstractAdminIntegrationTest;
@@ -10,6 +11,7 @@ import ru.ajana.admin.AbstractAdminIntegrationTest;
  *
  * @author Andrey Kharintsev on 19.01.2019
  */
+@Ignore
 public class MigrationIT extends AbstractAdminIntegrationTest {
 
   @Autowired

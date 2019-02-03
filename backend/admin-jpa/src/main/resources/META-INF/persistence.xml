@@ -10,6 +10,11 @@
     <class>ru.ajana.admin.jpa.entities.UserEntity</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
+      <!-- https://www.eclipse.org/eclipselink/documentation/2.6/jpa/extensions/persistenceproperties_ref.htm#CACBICGG2 -->
+      <!-- Использовать эксклюзивное соединение для работы с БД
+      <property name="eclipselink.jdbc.exclusive-connection.mode" value="Transactional"/>
+      <property name="eclipselink.persistence-context.reference-mode" value="HARD"/>
+      -->
       <property name="eclipselink.weaving" value="static"/>
     </properties>
   </persistence-unit>

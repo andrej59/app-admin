@@ -1,3 +1,5 @@
+apply plugin: 'org.springframework.boot'
+
 dependencies {
     // Project
     compile project(':admin-api')
@@ -47,13 +49,12 @@ dependencies {
     compile 'io.springfox:springfox-swagger-ui'
 
     // Common
-    compile'org.apache.commons:commons-lang3'
+    compile 'org.apache.commons:commons-lang3'
     compile 'org.hibernate:hibernate-validator'
     compile 'org.glassfish:javax.json'
     compile 'javax.json.bind:javax.json.bind-api'
     compile 'com.github.dozermapper:dozer-core'
     compileOnly 'org.projectlombok:lombok'
-
 
     // Logging
     compile 'org.slf4j:slf4j-api'
@@ -74,4 +75,20 @@ dependencies {
     testCompile 'com.opentable.components:otj-pg-embedded'
     testCompile 'com.namics.oss:java-random'
     testCompile 'org.apache.httpcomponents:httpclient'
+}
+
+bootJar {
+    mainClassName = 'ru.ajana.admin.Application'
+    launchScript {
+        properties 'logFilename': 'admin.log'
+        properties 'confFolder': 'conf'
+    }
+}
+
+test {
+    exclude '/**/*DT.java'
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging {
+        showStandardStreams = true
+    }
 }
