@@ -53,7 +53,7 @@ Ext.define('Admin.view.main.Main', {
             headerPosition: 'top'
         },
         wide: {
-            headerPosition: 'left'
+            headerPosition: 'right'
         }
     },
 
@@ -76,26 +76,26 @@ Ext.define('Admin.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
+        title: 'Главная',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'mainlist'
         }]
     }, {
-        title: 'Users',
+        title: 'Пользователи',
         iconCls: 'fa-user',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Groups',
+        title: 'Группы',
         iconCls: 'fa-users',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Settings',
+        title: 'Настройки',
         iconCls: 'fa-cog',
         bind: {
             html: '{loremIpsum}'
