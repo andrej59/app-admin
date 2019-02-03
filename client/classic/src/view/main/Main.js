@@ -85,9 +85,9 @@ Ext.define('Admin.view.main.Main', {
     }, {
         title: 'Пользователи',
         iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'userList'
+        }]
     }, {
         title: 'Группы',
         iconCls: 'fa-users',

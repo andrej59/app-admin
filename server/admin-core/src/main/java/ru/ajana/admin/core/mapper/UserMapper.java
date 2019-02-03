@@ -17,9 +17,9 @@ public class UserMapper implements Mapper<UserEntity, User> {
     }
     final User user = new User();
     user.setId(entity.getId());
-    user.setName(entity.getName());
+    user.setUserName(entity.getName());
     user.setEmail(entity.getEmail());
-    user.setEnabled(entity.getEnabled());
+    user.setLocked(entity.getEnabled());
     user.setPassword(entity.getPassword());
     user.setSalt(entity.getSalt());
     return user;
@@ -32,11 +32,11 @@ public class UserMapper implements Mapper<UserEntity, User> {
     }
     final UserEntity entity = new UserEntity();
     entity.setId(user.getId());
-    entity.setName(user.getName());
+    entity.setName(user.getUserName());
     entity.setPassword(user.getPassword());
     entity.setSalt(user.getSalt());
     entity.setEmail(user.getEmail());
-    entity.setEnabled(user.getEnabled());
+    entity.setEnabled(user.getLocked());
     return entity;
   }
 }

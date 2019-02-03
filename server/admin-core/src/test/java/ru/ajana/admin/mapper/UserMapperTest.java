@@ -39,9 +39,9 @@ public class UserMapperTest extends AbstractTest {
 
   private void checkMapUser(UserEntity entity, User user) {
     assertEquals(entity.getId(), user.getId());
-    assertEquals(entity.getName(), user.getName());
+    assertEquals(entity.getName(), user.getUserName());
     assertEquals(entity.getPassword(), user.getPassword());
     assertEquals(entity.getEmail(), user.getEmail());
-    assertEquals(entity.getEnabled(), user.getEnabled());
+    assertEquals(entity.getEnabled(), user.getLocked());
   }
 }

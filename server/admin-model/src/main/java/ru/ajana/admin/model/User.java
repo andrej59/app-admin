@@ -1,6 +1,7 @@
 package ru.ajana.admin.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Пользователь приложения.
@@ -10,11 +11,13 @@ import java.io.Serializable;
 public class User implements Serializable {
 
   private Long id;
-  private String name;
+  private String userName;
   private transient String password;
   private transient String salt;
   private String email;
-  private Boolean enabled;
+  private Boolean locked;
+  private Date createDate;
+  private Date lastLoginDate;
 
   public Long getId() {
     return id;
@@ -24,12 +27,12 @@ public class User implements Serializable {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public String getUserName() {
+    return userName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setUserName(String userName) {
+    this.userName = userName;
   }
 
   public String getPassword() {
@@ -56,12 +59,28 @@ public class User implements Serializable {
     this.email = email;
   }
 
-  public Boolean getEnabled() {
-    return enabled;
+  public Boolean getLocked() {
+    return locked;
   }
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
+  public void setLocked(Boolean locked) {
+    this.locked = locked;
+  }
+
+  public Date getCreateDate() {
+    return createDate;
+  }
+
+  public void setCreateDate(Date createDate) {
+    this.createDate = createDate;
+  }
+
+  public Date getLastLoginDate() {
+    return lastLoginDate;
+  }
+
+  public void setLastLoginDate(Date lastLoginDate) {
+    this.lastLoginDate = lastLoginDate;
   }
 
   @Override
@@ -78,13 +97,13 @@ public class User implements Serializable {
     if (id != null ? !id.equals(user.id) : user.id != null) {
       return false;
     }
-    return name != null ? name.equals(user.name) : user.name == null;
+    return userName != null ? userName.equals(user.userName) : user.userName == null;
   }
 
   @Override
   public int hashCode() {
     int result = id != null ? id.hashCode() : 0;
-    result = 31 * result + (name != null ? name.hashCode() : 0);
+    result = 31 * result + (userName != null ? userName.hashCode() : 0);
     return result;
   }
 }
