@@ -1,9 +1,30 @@
-# Админка приложения
+# Клиент приложения "Панель администратора приложения" 
 
 ## Описание
 
-Frontend 
+## Зависимости
+
+## Сборка 
+
+* Разработка
+
+```sh
+sencha app build --development
+```
+* Тестирование
+```sh
+sencha app build --testing
+```
+
+* Продуктив
+
+```sh
+sencha app build --production
+```
+
+## Конфигурация
+
+## Запуск
 
 ## Ссылки
-
-* https://mydevgeek.com/angular-4-crud-application-with-spring-boot-rest-service-part-1/
+ 
