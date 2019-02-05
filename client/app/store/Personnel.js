@@ -1,6 +1,5 @@
 Ext.define('Admin.store.Personnel', {
     extend: 'Ext.data.Store',
-
     alias: 'store.personnel',
 
     fields: [

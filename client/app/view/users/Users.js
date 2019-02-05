@@ -4,18 +4,21 @@ Ext.define('Admin.view.users.Users', {
 
   requires: [
     'Admin.view.users.UsersController',
-    'Admin.view.users.UsersModel'
+    'Admin.model.User',
+    'Ext.grid.column.Date'
   ],
 
-  controller: 'users-users',
+  controller: 'users',
   title: 'Пользователи',
 
   viewModel: {
     type: 'users'
   },
 
+  bind: '{usersData}',
+
   columns: [
-    {text: 'Имя пользователя', dataIndex: 'name'},
+    {text: 'Имя пользователя', dataIndex: 'userName'},
     {text: 'Email', dataIndex: 'email', flex: 1},
     {text: 'Блокировка', dataIndex: 'locked', flex: 1},
     {text: 'Дата создания', dataIndex: 'createDate', flex: 1},

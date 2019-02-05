@@ -12,10 +12,11 @@ Ext.define('Admin.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
         'Admin.view.main.MainController',
         'Admin.view.main.MainModel',
-        'Admin.view.main.List'
+        'Admin.view.users.UsersModel',
+        'Admin.view.main.List',
+        'Admin.view.users.Users'
     ],
 
     controller: 'main',

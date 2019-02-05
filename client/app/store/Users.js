@@ -4,19 +4,28 @@
 Ext.define('Admin.store.Users', {
   extend: 'Ext.data.Store',
   alias: 'store.users',
-
   model: 'Admin.model.User',
-
   data: [
     {
       userName: 'admin',
-      email: 'admin@mail.ru',
-      locked: false
+      email: 'admin@mail.com',
+      locked: false,
+      createDate: null,
+      lastLoginDate: null
     },
     {
       userName: 'user',
       email: 'user@mail.ru',
-      locked: false
+      locked: false,
+      createDate: null,
+      lastLoginDate: null
     }
-  ]
+  ],
+
+  proxy: {
+    type: 'memory',
+    reader: {
+      type: 'json'
+    }
+  }
 });
