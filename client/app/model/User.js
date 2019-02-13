@@ -5,6 +5,7 @@ Ext.define('Admin.model.User', {
   extend: 'Admin.model.Base',
 
   fields: [
+    {name: 'id', type: 'int'},
     {name: 'userName', type: 'string'},
     {name: 'email', type: 'string'},
     {name: 'locked', type: 'boolean'},

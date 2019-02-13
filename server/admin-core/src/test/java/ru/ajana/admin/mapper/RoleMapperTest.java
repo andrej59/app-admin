@@ -39,6 +39,6 @@ public class RoleMapperTest extends AbstractTest {
   private void checkMapRole(RoleEntity entity, Role role) {
     assertEquals(entity.getId(), role.getId());
     assertEquals(entity.getName(), role.getName());
-    assertEquals(entity.getIdent(), role.getIdent());
+    assertEquals(entity.getIdent(), role.getCode());
   }
 }

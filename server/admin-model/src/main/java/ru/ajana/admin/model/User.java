@@ -2,6 +2,8 @@ package ru.ajana.admin.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * Пользователь приложения.
@@ -18,6 +20,8 @@ public class User implements Serializable {
   private Boolean locked;
   private Date createDate;
   private Date lastLoginDate;
+  private Set<Role> roles;
+  private Set<Group> groups;
 
   public Long getId() {
     return id;
@@ -83,6 +87,22 @@ public class User implements Serializable {
     this.lastLoginDate = lastLoginDate;
   }
 
+  public Set<Role> getRoles() {
+    return roles;
+  }
+
+  public void setRoles(Set<Role> roles) {
+    this.roles = roles;
+  }
+
+  public Set<Group> getGroups() {
+    return groups;
+  }
+
+  public void setGroups(Set<Group> groups) {
+    this.groups = groups;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -91,19 +111,17 @@ public class User implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-
     User user = (User) o;
-
-    if (id != null ? !id.equals(user.id) : user.id != null) {
-      return false;
-    }
-    return userName != null ? userName.equals(user.userName) : user.userName == null;
+    return Objects.equals(id, user.id) &&
+        Objects.equals(userName, user.userName) &&
+        Objects.equals(email, user.email) &&
+        Objects.equals(locked, user.locked) &&
+        Objects.equals(createDate, user.createDate) &&
+        Objects.equals(lastLoginDate, user.lastLoginDate);
   }
 
   @Override
   public int hashCode() {
-    int result = id != null ? id.hashCode() : 0;
-    result = 31 * result + (userName != null ? userName.hashCode() : 0);
-    return result;
+    return Objects.hash(id, userName);
   }
 }

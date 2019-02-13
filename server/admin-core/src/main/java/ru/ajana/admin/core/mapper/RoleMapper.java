@@ -14,7 +14,7 @@ public class RoleMapper implements Mapper<RoleEntity, Role> {
     Role role = new Role();
     role.setId(entity.getId());
     role.setName(entity.getName());
-    role.setIdent(entity.getIdent());
+    role.setCode(entity.getIdent());
     return role;
   }
 
@@ -23,7 +23,7 @@ public class RoleMapper implements Mapper<RoleEntity, Role> {
     RoleEntity roleEntity = new RoleEntity();
     roleEntity.setId(role.getId());
     roleEntity.setName(role.getName());
-    roleEntity.setIdent(role.getIdent());
+    roleEntity.setIdent(role.getCode());
     return roleEntity;
   }
 }

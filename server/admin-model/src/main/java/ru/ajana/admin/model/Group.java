@@ -2,17 +2,19 @@ package ru.ajana.admin.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 /**
- * Роль пользователя.
+ * Группа пользоватлей.
  *
- * @author Andrey Kharintsev by 10.03.2018
+ * @author Andrey Kharintsev on 11.02.2019
  */
-public class Role implements Serializable {
+public class Group implements Serializable {
 
   private Long id;
   private String name;
-  private String code;
+
+  private Set<Role> roles;
 
   public Long getId() {
     return id;
@@ -30,12 +32,12 @@ public class Role implements Serializable {
     this.name = name;
   }
 
-  public String getCode() {
-    return code;
+  public Set<Role> getRoles() {
+    return roles;
   }
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setRoles(Set<Role> roles) {
+    this.roles = roles;
   }
 
   @Override
@@ -46,14 +48,13 @@ public class Role implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Role role = (Role) o;
-    return Objects.equals(id, role.id) &&
-        Objects.equals(name, role.name) &&
-        Objects.equals(code, role.code);
+    Group group = (Group) o;
+    return Objects.equals(id, group.id) &&
+        Objects.equals(name, group.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, code);
+    return Objects.hash(id);
   }
 }

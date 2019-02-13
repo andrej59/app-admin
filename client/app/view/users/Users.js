@@ -1,3 +1,6 @@
+/**
+ * Created by Andrey Kharintsev on 11.02.2019.
+ */
 Ext.define('Admin.view.users.Users', {
   extend: 'Ext.grid.Panel',
   xtype: 'userList',
@@ -8,8 +11,9 @@ Ext.define('Admin.view.users.Users', {
     'Ext.grid.column.Date'
   ],
 
-  controller: 'users',
   title: 'Пользователи',
+
+  controller: 'users',
 
   viewModel: {
     type: 'users'
@@ -18,11 +22,36 @@ Ext.define('Admin.view.users.Users', {
   bind: '{usersData}',
 
   columns: [
-    {text: 'Имя пользователя', dataIndex: 'userName'},
-    {text: 'Email', dataIndex: 'email', flex: 1},
-    {text: 'Блокировка', dataIndex: 'locked', flex: 1},
-    {text: 'Дата создания', dataIndex: 'createDate', flex: 1},
-    {text: 'Время последнего входа', dataIndex: 'lastLoginDate', flex: 1}
+    {dataIndex: 'id', text: 'ID'},
+    {
+      dataIndex: 'userName',
+      text: 'Имя пользователя',
+      width: 150,
+      align: 'left'
+    },
+    {dataIndex: 'email', text: 'Email', flex: 1, align: 'left'},
+    {
+      dataIndex: 'locked', text: 'Блокировка', width: 100, align: 'center',
+      renderer: function (value) {
+        return value ? 'Да' : 'Нет';
+      }
+    },
+    {
+      dataIndex: 'createDate',
+      text: 'Дата создания',
+      xtype: 'datecolumn',
+      format: 'd.m.Y',
+      width: 120,
+      align: 'center'
+    },
+    {
+      dataIndex: 'lastLoginDate',
+      text: 'Последний вход',
+      xtype: 'datecolumn',
+      format: 'd.m.Y H:i:s',
+      width: 160,
+      align: 'center'
+    }
   ],
 
   listeners: {

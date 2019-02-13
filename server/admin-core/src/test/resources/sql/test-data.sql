@@ -7,9 +7,9 @@ INSERT INTO users (id, userName, password, salt, email, locked, dt_create, dt_up
 /*==============================================================*/
 /* Table: ROLES                                                 */
 /*==============================================================*/
-INSERT INTO roles (id, userName, ident) VALUES (4, 'Администратор', 'admin');
-INSERT INTO roles (id, userName, ident) VALUES (5, 'Пользователь', 'user');
-INSERT INTO roles (id, userName, ident) VALUES (6, 'Разработчик', 'developer');
+INSERT INTO roles (id, userName, code) VALUES (4, 'Администратор', 'admin');
+INSERT INTO roles (id, userName, code) VALUES (5, 'Пользователь', 'user');
+INSERT INTO roles (id, userName, code) VALUES (6, 'Разработчик', 'developer');
 /*==============================================================*/
 /* Table: USER_ROLES                                            */
 /*==============================================================*/
