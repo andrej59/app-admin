@@ -1,18 +1,16 @@
 /**
- * Пользователь.
- * Created by Andrey Kharintsev on 03.02.2019.
+ * Роль пользователя.
+ * Created by Andrey Kharintsev on 17.02.2019.
  */
-Ext.define('Admin.model.User', {
-  extend: 'Admin.model.Base',
+Ext.define('Admin.model.UserRole', {
+  extend: 'Ext.data.Model',
 
   fields: [
-    {name: 'id', type: 'int'},
-    {name: 'userName', type: 'string'},
-    {name: 'fio', type: 'string'},
-    {name: 'email', type: 'string'},
-    {name: 'locked', type: 'boolean'},
-    {name: 'createDate', type: 'date'},
-    {name: 'lastLoginDate', type: 'date'}
+    {name: 'userId', type: 'int'},
+    {name: 'roleId', type: 'int'},
+    {name: 'name', type: 'string'},
+    {name: 'code', type: 'string'},
+    {name: 'granted', type: 'boolean'}
   ]
 
   /*

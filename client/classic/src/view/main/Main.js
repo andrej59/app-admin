@@ -12,6 +12,7 @@ Ext.define('Admin.view.main.Main', {
   requires: [
     'Ext.plugin.Viewport',
     'Ext.window.MessageBox',
+    'Ext.layout.container.Fit',
     'Admin.view.main.MainController',
     'Admin.view.main.MainModel',
     'Admin.view.users.UsersModel',
@@ -21,7 +22,6 @@ Ext.define('Admin.view.main.Main', {
 
   controller: 'main',
   viewModel: 'main',
-
   ui: 'navigation',
 
   tabBarHeaderPosition: 1,
@@ -59,7 +59,7 @@ Ext.define('Admin.view.main.Main', {
   },
 
   defaults: {
-    bodyPadding: 20,
+    bodyPadding: 3,
     tabConfig: {
       plugins: 'responsive',
       responsiveConfig: {
@@ -87,7 +87,7 @@ Ext.define('Admin.view.main.Main', {
     title: 'Пользователи',
     iconCls: 'fa-user',
     items: [{
-      xtype: 'userList'
+      xtype: 'users'
     }]
   }, {
     title: 'Роли',

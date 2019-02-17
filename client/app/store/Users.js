@@ -9,6 +9,7 @@ Ext.define('Admin.store.Users', {
     {
       id: 1,
       userName: 'admin',
+      fio: 'Иванов Иван Иванович',
       email: 'admin@mail.com',
       locked: false,
       createDate: '2019-02-12',
@@ -17,8 +18,18 @@ Ext.define('Admin.store.Users', {
     {
       id: 2,
       userName: 'user',
+      fio: 'Петров Иван',
       email: 'user@mail.ru',
       locked: false,
+      createDate: '2019-02-11',
+      lastLoginDate: null
+    },
+    {
+      id: 3,
+      userName: 'guest',
+      fio: 'Гость',
+      email: 'guest@mail.ru',
+      locked: true,
       createDate: '2019-02-11',
       lastLoginDate: null
     }
