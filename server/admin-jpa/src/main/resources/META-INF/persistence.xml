@@ -2,7 +2,7 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit userName="admin-jpa-unit">
+  <persistence-unit name="admin-jpa-unit">
     <class>ru.ajana.admin.jpa.entities.GroupEntity</class>
     <class>ru.ajana.admin.jpa.entities.RightEntity</class>
     <class>ru.ajana.admin.jpa.entities.RoleEntity</class>
@@ -12,10 +12,10 @@
     <properties>
       <!-- https://www.eclipse.org/eclipselink/documentation/2.6/jpa/extensions/persistenceproperties_ref.htm#CACBICGG2 -->
       <!-- Использовать эксклюзивное соединение для работы с БД
-      <property userName="eclipselink.jdbc.exclusive-connection.mode" value="Transactional"/>
-      <property userName="eclipselink.persistence-context.reference-mode" value="HARD"/>
+      <property name="eclipselink.jdbc.exclusive-connection.mode" value="Transactional"/>
+      <property name="eclipselink.persistence-context.reference-mode" value="HARD"/>
       -->
-      <property userName="eclipselink.weaving" value="static"/>
+      <property name="eclipselink.weaving" value="static"/>
     </properties>
   </persistence-unit>
 
@@ -23,10 +23,10 @@
         This file is required for the staticweave-maven-plugin.
         It should be named 'default' so Spring will not create 2 EMFs.
 
-  <persistence-unit userName="default">
+  <persistence-unit name="default">
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property userName="eclipselink.weaving" value="static"/>
+      <property name="eclipselink.weaving" value="static"/>
     </properties>
   </persistence-unit>
   -->
